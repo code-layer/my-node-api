@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "4c5805c4-37ab-4db9-b0da-2f85b0fc4809",
+		"name": "my-node-api",
+		"description": "Datalayer platform to show case write and test APIs using NodeJS and MongoDB with Express and Mongoose middleware components.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14774563",
+		"_collection_link": "https://datalayer-dev.postman.co/workspace/nosql-api-dev~a9f3c786-de1e-40fc-b013-7f7fb044908b/collection/14774563-4c5805c4-37ab-4db9-b0da-2f85b0fc4809?action=share&source=collection_link&creator=14774563"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{SERVER_URL}}/",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tutorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\" : \"NodeJS tutorials\",\r\n  \"description\": \"Learn to build APIs which are scalable\",\r\n  \"published\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER_URL}}/tutorials",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutorials All",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}/tutorials",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER_URL",
+			"value": "http://x.x.x.x:3000",
+			"type": "string"
+		}
+	]
+}

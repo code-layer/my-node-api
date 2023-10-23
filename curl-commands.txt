@@ -1,0 +1,26 @@
+//ping service
+curl http://localhost:3000/ -H 'Content-Type: application/json' | jq
+
+
+//add document1
+curl -X POST http://localhost:3000/tutorials \
+-H 'Content-Type: application/json' \
+--data-raw '{
+ "title" : "NodeJS tutorials",
+  "description": "Learn to build APIs which are scalable",
+  "published": true
+}'  | jq
+
+
+//add document2
+curl -X POST http://localhost:3000/tutorials \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "title" : "Enterprise API Environment",
+  "description": "Build scalable and enterprise level APIs",
+  "published": false
+}'  | jq
+
+
+//get all docs
+curl http://localhost:3000/tutorials -H 'Content-Type: application/json' | jq
